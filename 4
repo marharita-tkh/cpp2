@@ -2,11 +2,11 @@
 #include <cmath>
 using namespace std; 
 
-void convertToNotBinary (int a)
+void convertToBinary (int a)
 {
    if (a)
    {
-      convertToNotBinary (a >> 1); 
+      convertToBinary (a >> 1); 
       cout << (a & 1);
    }
 }   
@@ -17,6 +17,6 @@ int main ()
    cout <<"Введите десятичное число"<< endl;
    cin >> a;
    cout << "Двоичное = ";
-   convertToNotBinary (a);
+   convertToBinary (a);
    return 0;
 }
