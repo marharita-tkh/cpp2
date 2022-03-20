@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+using namespace std; 
+
+void convertToNotBinary (int a)
+{
+   if (a)
+   {
+      convertToNotBinary (a >> 1); 
+      cout << (a & 1);
+   }
+}   
+ 
+int main ()
+{
+   int a;
+   cout <<"Введите десятичное число"<< endl;
+   cin >> a;
+   cout << "Двоичное = ";
+   convertToNotBinary (a);
+   return 0;
+}
