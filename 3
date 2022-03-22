@@ -1,22 +1,23 @@
+#include <string>
 #include <iostream>
-#include <cmath>
-using namespace std; 
+using namespace std;
 
-void convertToNotBinary (int a)
+int main()
 {
-   if (a)
-   {
-      convertToNotBinary (a >> 1); 
-      cout << (a & 1);
-   }
-}   
- 
-int main ()
-{
-   int a;
-   cout <<"Введите десятичное число"<< endl;
-   cin >> a;
-   cout << "Двоичное = ";
-   convertToNotBinary (a);
-   return 0;
+    int dec = 0;
+    string bi;
+    int c = 1;
+    cout << "CIN binary"<<endl;
+    cin >> bi;
+    int len = bi.length();
+    for(int i = len; i>0; i--, c *= 2)
+    {
+        if(bi[i - 1] == '1') 
+        {
+	        dec += c;
+        }
+    }
+    cout << dec << endl;
+    cout<<endl;
+    return 0;
 }
